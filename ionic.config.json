@@ -1,0 +1,8 @@
+{
+  "name": "Mobilogix",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "3de1d86d"
+}
