@@ -28,6 +28,7 @@
             "style": "kebab-case"
           }
         ],
+        "project": "mobilogix/tsconfig.json",
         "@angular-eslint/directive-selector": [
           "error",
           {

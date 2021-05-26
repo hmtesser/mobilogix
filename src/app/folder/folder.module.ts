@@ -8,14 +8,15 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
+import { HomeComponent } from '../home/home.component'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
   ],
-  declarations: [FolderPage]
+  declarations: [FolderPage,HomeComponent]
 })
 export class FolderPageModule {}
