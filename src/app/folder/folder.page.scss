@@ -1,6 +1,15 @@
 ion-menu-button {
   color: var(--ion-color-primary);
+  border:0px;
+
 }
+
+
+ion-toolbar {
+
+  --background: var(--ion-item-background, var(--ion-background-color, #1E3964));
+}
+
 
 #container {
   text-align: center;
