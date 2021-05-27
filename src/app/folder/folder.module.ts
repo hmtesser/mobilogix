@@ -7,7 +7,18 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
-import { HomeComponent } from '../home/home.component'
+import { HomeComponent } from '../page/home/home.component'
+
+import { BoxComponent } from '../assets/box/box.component'
+
+import { MapsComponent } from '../maps/maps.component'
+
+import { GoogleMapsModule } from '@angular/google-maps'
+
+import { VehiclesComponent } from '../page/vehicles/vehicles.component';
+
+import { DevicesComponent } from '../page/devices/devices.component'
+
 
 @NgModule({
   imports: [
@@ -15,7 +26,8 @@ import { HomeComponent } from '../home/home.component'
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
+    GoogleMapsModule
   ],
-  declarations: [FolderPage,HomeComponent]
+  declarations: [FolderPage,HomeComponent,BoxComponent,MapsComponent,DevicesComponent,VehiclesComponent]
 })
 export class FolderPageModule {}

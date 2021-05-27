@@ -14,7 +14,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-  <app-home></app-home>
-  </div>
+  <ion-grid *ngIf="idPagina == 'Home'">
+      <app-home></app-home>
+  </ion-grid>
+  <ion-grid *ngIf="idPagina == 'Veiculos'">
+    <app-vehicles></app-vehicles>
+  </ion-grid>
+  <ion-grid *ngIf="idPagina == 'Devices'">
+    <app-devices></app-devices>
+  </ion-grid>
 </ion-content>

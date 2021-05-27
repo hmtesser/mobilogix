@@ -4,5 +4,6 @@
     "capacitor": {}
   },
   "type": "angular",
-  "id": "3de1d86d"
+  "id": "3de1d86d",
+  "defaultBrowser": "chrome"
 }
