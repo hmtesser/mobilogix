@@ -1,6 +1,26 @@
-ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #1E3964));
+$grid-breakpoints: (
+  xs: 0,
+  // Phone (0px - 575px)
+  sm: 576px,
+  // Phablet (576px - 767px)
+  md: 768px,
+  // Tablet vertical (768px - 991px)
+  lg: 992px // Tablet horizontal, Desktop (992px and above),,
+);
+
+@media screen and (max-width: 320px) {
+  ion-menu ion-content {
+    --background: var(--ion-item-background, var(--ion-background-color, white));
+  }
 }
+
+@media screen and (min-height: 768px) {
+  ion-menu ion-content {
+    --background: var(--ion-item-background, var(--ion-background-color, white));
+  }
+}
+
+
 
 ion-menu.md ion-content {
   --padding-start: 8px;

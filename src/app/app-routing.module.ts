@@ -7,8 +7,8 @@ const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'folder/Home',
-    pathMatch: 'full',
+    pathMatch: 'prefix',
+    loadChildren: () => LoginPageModule
   },
   {
     path: 'folder/:id',
