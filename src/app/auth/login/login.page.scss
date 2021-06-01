@@ -1,7 +1,39 @@
-ion-item{
-    --background: #3880ff;
-    --color: #fff;
-}
-ion-button{
-    --background: #062f77;
+app-login {}
+  $white-color: #fff;
+  $height100: 100%;
+
+  ion-grid {
+    width: 100%;
+    height: $height100;
+    background: #F5833B;
+  }
+
+  .title-login {
+      display:flex;
+      justify-content:center;
+      text-align:center;
+  }
+
+  .box-login {
+    display:flex;
+    justify-content: center;
+    height:20vh;
+    padding-top:10%;
+    text-align:center;
+  }
+
+ 
+
+  ion-button {
+    font-weight: 300;
+  }
+
+  @media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+      background: $white-color;
+    }
+    ion-col {
+      border: none;
+    }
+  
 }
