@@ -21,6 +21,8 @@ import { DevicesComponent } from '../page/devices/devices.component'
 
 import { BoxInfoComponent } from '../assets/box-info/box-info.component';
 
+import { SideMenuComponent } from '../assets/side-menu/side-menu.component';
+
 
 @NgModule({
   imports: [
@@ -30,6 +32,6 @@ import { BoxInfoComponent } from '../assets/box-info/box-info.component';
     FolderPageRoutingModule,
     GoogleMapsModule
   ],
-  declarations: [FolderPage,HomeComponent,BoxComponent,MapsComponent,DevicesComponent,VehiclesComponent,BoxInfoComponent]
+  declarations: [FolderPage,HomeComponent,BoxComponent,MapsComponent,DevicesComponent,VehiclesComponent,BoxInfoComponent,SideMenuComponent]
 })
 export class FolderPageModule {}

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -7,13 +8,17 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
 
   public appPages = [
-    { title: 'Home', url: '/folder/Home', icon: 'mail' },
-    { title: 'Devices', url: '/folder/Devices', icon: 'bag' },
-    { title: 'Veículos', url: '/folder/Veiculos', icon: 'car' },
+    { title: 'Home', url: '/folder/home', icon: 'mail' },
+    { title: 'Devices', url: '/folder/devices', icon: 'bag' },
+    { title: 'Véiculos', url: '/folder/veiculos', icon: 'car' },
   ];
 
   constructor() {}
 
+
+  ngOninit(){
+   
+  }
   userEmail: string = 'hmarcondes@mobilogix.com';
 
 

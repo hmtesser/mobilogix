@@ -1,25 +1,22 @@
 <ion-grid>
   <ion-row>
-    <ion-col class="logo-login">
-      
+    <ion-col size-md="12" size-lg="12" size-xs="12" class="loginLogo">
+      <img src="../../../assets/Mbx.png">
     </ion-col>
   </ion-row>
   <ion-row class="box-login">
     <ion-col align-self-center size-md="6" size-lg="4" size-xs="12">
-      <div padding>
-        <ion-item>
+      <div class="">
+        <ion-item class="inputLogin">
           <ion-input type="text" placeholder="Username"></ion-input>
         </ion-item>
-
-
-        <ion-item>
-          <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-item class="inputLogin">
+          <ion-input type="password" style="border-bottom:0px !important" placeholder="Password"></ion-input>
         </ion-item>
       </div>
-
-
-      <div padding>
-        <ion-button size="large" href="/folder/Home" expand="block">Login</ion-button>
+      <div>
+        <ion-button size="large" (click)="login()" expand="block">Login</ion-button>
       </div>
     </ion-col>
   </ion-row>
+</ion-grid>

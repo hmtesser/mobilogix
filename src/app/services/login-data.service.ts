@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginDataService {
 
 
-  private initCall:string = 'https://iter-api.itertelemetria.com'; 
+  private initCall:any = 'https://iter-api.itertelemetria.com'; 
 
-  private rest_Login:any = this.initCall`${'/v1/sign_in'}`
+  private rest_Login:any = '/v1/sign_in';
 
 
   constructor(private httpClient: HttpClient) { }

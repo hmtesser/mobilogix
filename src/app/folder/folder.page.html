@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title style="text-align:center">{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,13 +14,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid *ngIf="idPagina == 'Home'">
+  <ion-grid *ngIf="idPagina == 'home'">
       <app-home></app-home>
   </ion-grid>
-  <ion-grid *ngIf="idPagina == 'Veiculos'">
+  <ion-grid *ngIf="idPagina == 'veiculos'">
     <app-vehicles></app-vehicles>
   </ion-grid>
-  <ion-grid *ngIf="idPagina == 'Devices'">
+  <ion-grid *ngIf="idPagina == 'devices'">
     <app-devices></app-devices>
   </ion-grid>
 </ion-content>
