@@ -12,11 +12,13 @@ app-login {}
 
   .loginLogo {
     text-align: center;
+    height:180px;
   }
 
   .inputLogin {    
       border-radius:20px;
-      margin-bottom:10px;
+      margin:10px 50px 10px 50px;    
+      
   }
 
   ion-item {
@@ -39,13 +41,50 @@ app-login {}
     display:flex;
     justify-content: center;
     text-align:center;
+    height:65vh;
     padding-bottom:10px;
   }
 
  
+  .forgotPasswordRoute {
+    text-align: right;
+    padding-right:30px;
+    font-size: 12px;
+  }
 
   ion-button {
     font-weight: 300;
+    width: 300px;
+    display:inline-grid
+  }
+
+  ion-toolbar {
+    border-radius:30px;
+    color:white;
+    --background :red;
+  }
+  
+  .msgErro{
+    font-size:12px;
+  }
+
+  .errorMsg{
+    display:flex;
+    justify-content: center;
+
+  }
+
+  .testeAnimacao{
+    visibility:hidden;
+  }
+
+  .testeAnimacaoShow{
+    visibility: visible;
+  }
+
+  .errorMsgFooter{
+    text-align:center;    
+    width:100%;
   }
 
   @media (min-width: 240px) and (max-width: 768px) {
@@ -56,15 +95,27 @@ app-login {}
       border: none;
     }
 
-  
-
+    .inputLogin {
+      margin: 10px 0px 10px 0px;    
+    }
+ 
     .box-login {
         display:flex;
         justify-content: center;
-        height:20vh;       
+        height:60vh;       
         text-align:center;  
         padding-bottom:10px;
       }
 
+      .forgotPasswordRoute {
+        text-align: right;
+        padding-right:0px;
+        font-size: 12px;
+      }
+
+      .errorMsgFooter{
+        text-align:center;    
+        width:320px;
+      }
   
 }

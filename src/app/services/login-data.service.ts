@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { Login } from '../models/login'
 
 import { Observable } from 'rxjs';
 
@@ -15,12 +16,15 @@ export class LoginDataService {
   private rest_Login:any = '/v1/sign_in';
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public SendGetRequest() {
-    return this.httpClient.get(this.rest_Login)
-  
+  public getToken(password,email):Observable<any> {
+
+
+
+    return this.http.get(`${this.initCall}${this.rest_Login}`)
   }
-
-
 }
+ 
+
+

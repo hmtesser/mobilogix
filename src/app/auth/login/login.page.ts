@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { LoginDataService } from '../../services/login-data.service'
+import { LoginDataService } from '../../services/login-data.service';
 import { MenuController } from '@ionic/angular';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Login } from '../../models/login';
+import { Animation, AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,27 +15,74 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 
+
+
+
 export class LoginPage implements OnInit {
-  constructor(private router: Router,private LoginToken : LoginDataService, private menuCtrl: MenuController ) {}
 
+  @ViewChild('.testeAnimacao', { read: ElementRef }) errormsg:ElementRef
 
-  ngOnInit(){
+  returnToken: Login;
+  erro: any;
 
+  returnError: boolean = false;
+
+  loginForm: FormGroup;
+
+  constructor(
+    private animationCtrl: AnimationController,
+    private LoginToken: LoginDataService, private router : Router
+  ) {
+    this.loginForm = new FormGroup({
+      userName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.email,
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+    });
   }
-  Teste:boolean = true;
 
-
-
+  errorMessage: string;
 
   login() {
-  
+    let header = new Headers({ Authorization: '' });
+    if (this.loginForm.valid) {      
+      this.returnError = false;
+      this.router.navigateByUrl('/folder/home')
+      // this.LoginToken.getToken(
+      //   this.loginForm.get('password').value,
+      //   this.loginForm.get('userName').value
+      // ).subscribe(
+      //   (data) => {
+      //     this.returnToken = data;
+      //     this.returnError = false;
+      //   },
+      //   (error) => {
+      //     console.log(error);
+      //   }
+      // );
+    } else {
+      this.returnError = true;
 
-    this.router.navigateByUrl('/folder/home')
+
+      const animation: Animation = this.animationCtrl
+        .create()
+        .addElement(document.querySelector('.testeAnimacao'))
+        .duration(1000)
+        .fromTo('opacity', '0', '1')
+        .fromTo('visibilty','none','visible')
+        
+      animation.play();
+      this.errorMessage = 'Favor preencher os campos e tentar novamente';
+
+      console.log('erro');
+    }
   }
 
-
-   
-  
-
-  
+  ngOnInit() {}
+  Teste: boolean = true;
 }

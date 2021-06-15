@@ -1,0 +1,21 @@
+ion-toolbar {
+    border-radius:30px;
+    color:white;
+    --background :red;
+  }
+  
+  .msgErro{
+    font-size:12px;
+  }
+
+  .errorMsg{
+    display:flex;
+    justify-content: center;
+
+  }
+
+  .errorMsgFooter{
+    text-align:center;
+    background-color: orange;
+    width:450px;
+  }
