@@ -1,30 +1,33 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { Login } from '../models/login'
+import { encode } from 'punycode';
 
-import { Observable } from 'rxjs';
+
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginDataService {
+  private initCall: string = 'https://iter-api.itertelemetria.com';
 
+  private rest_Login: String = '/v1/sign_in';
 
-  private initCall:any = 'https://iter-api.itertelemetria.com'; 
+  constructor(private http: HttpClient) {}
 
-  private rest_Login:any = '/v1/sign_in';
+  public getToken(email, password): Promise<any> {
+    const options = {
+      headers: new HttpHeaders({
+        Authorization: `Basic ${btoa(`${email}:${password}`)}`,
+      }),
+    };
 
-
-  constructor(private http: HttpClient) { }
-
-  public getToken(password,email):Observable<any> {
-
-
-
-    return this.http.get(`${this.initCall}${this.rest_Login}`)
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.initCall}${this.rest_Login}`, options).subscribe(
+        (data) => resolve(data),
+        (error) => reject(error)
+      );
+    });
   }
 }
- 
-
-

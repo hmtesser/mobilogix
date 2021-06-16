@@ -7,22 +7,23 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
-import { HomeComponent } from '../page/home/home.component'
+import { HomeComponent } from '../page/home/home.component';
 
-import { BoxComponent } from '../assets/box/box.component'
+import { BoxComponent } from '../assets/box/box.component';
 
-import { MapsComponent } from '../maps/maps.component'
+import { MapsComponent } from '../maps/maps.component';
 
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { VehiclesComponent } from '../page/vehicles/vehicles.component';
 
-import { DevicesComponent } from '../page/devices/devices.component'
+import { DevicesComponent } from '../page/devices/devices.component';
 
 import { BoxInfoComponent } from '../assets/box-info/box-info.component';
 
 import { SideMenuComponent } from '../assets/side-menu/side-menu.component';
 
+import { PassRecoveryComponent } from '../page/pass-recovery/pass-recovery.component';
 
 @NgModule({
   imports: [
@@ -30,8 +31,18 @@ import { SideMenuComponent } from '../assets/side-menu/side-menu.component';
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
   ],
-  declarations: [FolderPage,HomeComponent,BoxComponent,MapsComponent,DevicesComponent,VehiclesComponent,BoxInfoComponent,SideMenuComponent]
+  declarations: [
+    FolderPage,
+    HomeComponent,
+    BoxComponent,
+    MapsComponent,
+    DevicesComponent,
+    VehiclesComponent,
+    BoxInfoComponent,
+    SideMenuComponent,
+    PassRecoveryComponent,
+  ],
 })
 export class FolderPageModule {}

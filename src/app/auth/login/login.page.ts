@@ -48,23 +48,18 @@ export class LoginPage implements OnInit {
 
   errorMessage: string;
 
-  login() {
-    let header = new Headers({ Authorization: '' });
+  async login() {
     if (this.loginForm.valid) {      
       this.returnError = false;
-      this.router.navigateByUrl('/folder/home')
-      // this.LoginToken.getToken(
-      //   this.loginForm.get('password').value,
-      //   this.loginForm.get('userName').value
-      // ).subscribe(
-      //   (data) => {
-      //     this.returnToken = data;
-      //     this.returnError = false;
-      //   },
-      //   (error) => {
-      //     console.log(error);
-      //   }
-      // );
+      
+      const retorno = await this.LoginToken.getToken(
+        this.loginForm.get('userName').value,
+        this.loginForm.get('password').value
+     )
+     
+     console.log(Object[retorno].key('token'));
+    ///this.router.navigateByUrl('/folder/home')
+     
     } else {
       this.returnError = true;
 
@@ -83,6 +78,14 @@ export class LoginPage implements OnInit {
     }
   }
 
+  goRecoveryRoute(){
+    this.router.navigateByUrl('/recovery')
+  }
+
   ngOnInit() {}
-  Teste: boolean = true;
+ 
+
+
+
+
 }

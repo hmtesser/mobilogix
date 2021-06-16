@@ -13,6 +13,7 @@ import { LoginPage } from './auth/login/login.page'
 import { LoginDataService } from './services/login-data.service';
 import { FolderPage } from './folder/folder.page';
 import { AppComponent } from './app.component';
+import { PassRecoveryComponent } from './page/pass-recovery/pass-recovery.component';
 
 
 @NgModule({
