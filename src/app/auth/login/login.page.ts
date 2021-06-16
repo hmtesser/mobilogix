@@ -57,7 +57,23 @@ export class LoginPage implements OnInit {
         this.loginForm.get('password').value
      )
      
-     console.log(Object[retorno].key('token'));
+     if(retorno.status == 401){
+
+      const animation: Animation = this.animationCtrl
+        .create()
+        .addElement(document.querySelector('.testeAnimacao'))
+        .duration(1000)
+        .fromTo('opacity', '0', '1')
+        .fromTo('visibilty','none','visible')
+        
+      animation.play();
+      this.errorMessage = 'E-mail ou senha incorretos';
+
+      console.log('erro');
+
+     }
+     
+   
     ///this.router.navigateByUrl('/folder/home')
      
     } else {
@@ -72,9 +88,8 @@ export class LoginPage implements OnInit {
         .fromTo('visibilty','none','visible')
         
       animation.play();
-      this.errorMessage = 'Favor preencher os campos e tentar novamente';
-
-      console.log('erro');
+      this.errorMessage = 'Favor preencher os campos corretamente e tentar novamente';
+      
     }
   }
 
@@ -82,7 +97,9 @@ export class LoginPage implements OnInit {
     this.router.navigateByUrl('/recovery')
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
  
 
 

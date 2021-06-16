@@ -26,7 +26,7 @@ export class LoginDataService {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.initCall}${this.rest_Login}`, options).subscribe(
         (data) => resolve(data),
-        (error) => reject(error)
+        (error) => resolve(error)
       );
     });
   }
