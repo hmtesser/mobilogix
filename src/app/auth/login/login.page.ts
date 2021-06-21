@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
      )
      
      if(retorno.status == 401){
-
+      this.returnError = true;
       const animation: Animation = this.animationCtrl
         .create()
         .addElement(document.querySelector('.testeAnimacao'))
@@ -67,10 +67,11 @@ export class LoginPage implements OnInit {
         .fromTo('visibilty','none','visible')
         
       animation.play();
-      this.errorMessage = 'E-mail ou senha incorretos';
-
-      console.log('erro');
-
+      this.errorMessage = 'Dados Incorretos';
+     }
+     else{
+       this.returnError = false;
+      this.router.navigateByUrl('/folder/home')
      }
      
    
@@ -89,7 +90,7 @@ export class LoginPage implements OnInit {
         
       animation.play();
       this.errorMessage = 'Favor preencher os campos corretamente e tentar novamente';
-      
+
     }
   }
 

@@ -1,35 +1,33 @@
 <ion-grid>
   <ion-row>
     <ion-col size-lg="6" size-md="4" size-sm="6" size="12" >
-      <app-box textValue="Total devices Cadastrados" cardValue="70"></app-box>
+      <app-box textValue="Ativos" cardValue="70"></app-box>
     </ion-col>
     <ion-col size-lg="6" size-md="4" size-sm="6" size="12" >
-      <app-box textValue="Total de Unidades rastreáveis associadas" cardValue="150"></app-box>
+      <app-box textValue="Gateways" cardValue="150"></app-box>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
-      <app-box-info textValue="Total Devices Ativos" cardValue="200"></app-box-info>
+      <app-box-info textValue="Sensores/Acessórios" cardValue="20"></app-box-info>
     </ion-col>
     <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
-      <app-box-info textValue="Total Devices P2P Ativos" cardValue="120"></app-box-info>
+      <app-box-info textValue="Total Devices P2P Ativos" cardValue="40"></app-box-info>
     </ion-col>
     <ion-col size-lg="4" size-md="4" size-sm="6" size="12">
       <app-box-info textValue="Total de Unidades Rastreáveis Ativos" cardValue="60"></app-box-info>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col size="12">
-      <ion-card>
+    <ion-col size="4">
+      <ion-card style="height:100%">
         <ion-card-header style="text-align:center"> Line Chart </ion-card-header>
         <ion-card-content>
-          <div class="Chart"><canvas #barCanvas class="Chart"></canvas></div>
+          <div class="Chart"><canvas #barCanvas></canvas></div>
         </ion-card-content>
       </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
+    </ion-col>  
+    <ion-col size="8">
       <app-maps></app-maps>
     </ion-col>
   </ion-row>

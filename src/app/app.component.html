@@ -1,11 +1,10 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu [disabled]="true" contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Mobilogix</ion-list-header>
+      <ion-content style="color:red">
+        <ion-list id="inbox-list" style="color:blue">
+          <ion-list-header style="color:blue">*Logo Cliente*</ion-list-header>
           <ion-note>{{userEmail}}</ion-note>
-
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]"  lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>

@@ -33,11 +33,9 @@
     
     
     .Chart {
-        //position: relative; height: 20vh; width: 40vw;
-
+        height:100%;
+        position: relative;        
         @include sm {
-           position : relative;
-       
-          
+           position : relative;  
         }
     }

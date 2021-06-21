@@ -6,9 +6,16 @@ app-login {}
 
 
   img {
-    width: 200px;
-    height: 240px;
+    width: 324px;
+    padding-top:75px;
   }
+
+  p{
+    a{
+      color:white;
+    }
+  }
+
 
   .loginLogo {
     text-align: center;
@@ -28,7 +35,7 @@ app-login {}
   ion-grid {
     width: 100%;
     height: $height100;
-    background: orange;
+    background: $mbx-blue-color;
   }
 
   .title-login {
@@ -89,7 +96,7 @@ app-login {}
 
   @media (min-width: 240px) and (max-width: 768px) {
     ion-grid {
-      background: orange;
+      background: $mbx-blue-color;
     }
     ion-col {
       border: none;

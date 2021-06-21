@@ -8,21 +8,58 @@ $grid-breakpoints: (
   lg: 992px // Tablet horizontal, Desktop (992px and above),,
 );
 
+
+$white-color: #fff;
+$mbx-orange-color:#F5833B;
+$mbx-blue-color: #1E3964;
+$height100: 100%;
+
+
 @media screen and (max-width: 320px) {
   ion-menu ion-content {
-    --background: var(--ion-item-background, var(--ion-background-color, white));
+    --background: var(--ion-item-background, var(--ion-background-color, $mbx-blue-color
+    
+    ));
   }
 }
 
 @media screen and (min-height: 768px) {
   ion-menu ion-content {
-    --background: var(--ion-item-background, var(--ion-background-color, white));
+    --background: var(--ion-item-background, var(--ion-background-color,$mbx-blue-color));
   }
 }
 
+ion-menu {
+    width:250px;
+}
 
-ion-menu{
-  width:150px;
+ion-list {
+  background: $mbx-blue-color;
+}
+
+ion-list ion-item{
+  --background: #1E3964;
+  color:white;
+}
+
+ion-list ion-item.selected{
+  background: silver;
+  color: #1e3964;
+  font-weight:bold;
+}
+
+ion-list ion-item.hover {
+  --background-hover: #f5833B !important;
+  background-color: #F5833B !important;
+  color:white;
+}
+
+ion-menu ion-content{
+  --background: var(--ion-item-background, var(--ion-background-color, #1E3964))
+}
+
+ion-menu-toogle ion-item {
+  --background: var(--ion-item-background, var(--ion-background-color, #1E3964))
 }
 
 
@@ -35,6 +72,7 @@ ion-menu.md ion-content {
 
 ion-menu.md ion-list {
   padding: 20px 0;
+  --background: var(--ion-item-background, var(--ion-background-color, #F5833B))
 }
 
 ion-menu.md ion-note {
@@ -142,9 +180,15 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 
+ion-icon{
+  --ion-color-primary : orange;
+  
+}
+
 
 @media (min-width: 240px) and (max-width: 768px) {
   ion-menu{    
       width:300px;
     }  
 }
+
